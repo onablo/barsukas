@@ -12,9 +12,9 @@ $sk = 1;
 
 echo '-------------';
 echo '<br>';
-echo $sk++ + ++$sk;
+//echo $sk++ + ++$sk;
 echo '<br>';
-//echo $sk++ + $sk++;
+echo $sk++ + $sk++;
 echo '<br>';
 //echo ++$sk + ++$sk;
 echo '<br>';
