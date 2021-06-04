@@ -1,11 +1,6 @@
 <?php
 echo 'Nr1<br>';
 echo '-------<br>';
-//$keys = array(1, 30);
-//$value =array_fill_keys($keys, (rand(5, 25)));
-//foreach ($masyvas as $ind => &$val) {
-//    $val = rand(5, 25);
-//}
 
 $arraySize = 30;
  
@@ -16,12 +11,22 @@ foreach ($masyvas as $index => &$value) {
     $value = rand(5, 25);
     echo "$index =>$value" . '<br>';
 }
-echo '</div>';
-echo '<hr>';
+echo '-------<br>';
+echo 'Destytojo variantas';
 
+$masyvas = [];
+
+foreach(range(1, 30) as $_) {
+    $masyvas[] = rand(5, 25);
+}
+//_d($masyvas);
+echo $masyvas;
+
+echo '<hr>';
+echo '</div>';
 echo '<br>';
 echo 'Nr2<br>';
-echo '-------<br>';
+
 $value = rand(5, 25);
 //$count = 0;
 if ($value > 10) {
@@ -57,3 +62,4 @@ $d++;
 }
 
 unset($value);
+echo $raidziuMasyvas;
