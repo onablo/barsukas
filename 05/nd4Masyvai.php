@@ -260,7 +260,7 @@ echo "$ind10 - $value ";
 
 
 echo '<br>';
-echo '--------Tomo variantas-----------<br>';
+echo '-------<br>';
 foreach ($masyvas as $key => $value ) {
     if ($value > 10) {
     break;
@@ -283,12 +283,13 @@ echo '------------------------------<br>';
 
 $poriniuMasyvas = [];
 foreach ($masyvas as $key => &$value ) {
-    if ($key %2 != 0) {
-        array_push($poriniuMasyvas, $value);    
+    if ($key %2 === 0) {
+        unset($poriniuMasyvas[$key]);    
     }
-}       
- print_r($poriniuMasyvas);
- unset($value);
+}  
+foreach ($masyvas as $value ) {   
+echo $value . '~';
+}
  echo '<br>';
 
 
