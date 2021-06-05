@@ -240,26 +240,11 @@ echo '<hr>';
 echo '<br>';
 echo 'Nr2, h <br>';
 echo '-------<br>';
-/*Suraskite pirmą (mažiausią) indeksą, kurio elemento reikšmė didesnė už 10;*/
+/*Suraskite pirmą (mažiausią) indeksą, kurio 
+elemento reikšmė didesnė už 10;*/
 print_r($masyvas);
 echo '<br>';
-echo '--------Destytojo variantas-----------<br>';
-/*
-reset ($masyvas);
-print_r(current($masyvas));
-echo '<br>';
-print_r(key($masyvas));
-echo '<br>';
-next($masyvas);
-print_r(current($masyvas));
-echo '<br>';
-print_r(key($masyvas));
-echo '<br>';
-next($masyvas);
-print_r(current($masyvas));
-echo '<br>';
-print_r(key($masyvas));
-*/
+echo '--------Destytojo variantas---------<br>';
 
 reset ($masyvas);
 $ind10 = false;
@@ -272,7 +257,6 @@ do {
 while (key($masyvas)!==null && $value < 10);
 
 echo "$ind10 - $value ";
-
 
 
 echo '<br>';
@@ -293,9 +277,19 @@ echo 'Nr2, i <br>';
 echo '-------<br>';
 /* Naudodami funkciją unset() iš masyvo ištrinkite visus elementus 
 turinčius porinį indeksą;*/
+print_r($masyvas);
+echo '<br>';
+echo '------------------------------<br>';
 
-
-
+$poriniuMasyvas = [];
+foreach ($masyvas as $key => &$value ) {
+    if ($key %2 != 0) {
+        array_push($poriniuMasyvas, $value);    
+    }
+}       
+ print_r($poriniuMasyvas);
+ unset($value);
+ echo '<br>';
 
 
 
