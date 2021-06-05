@@ -3,9 +3,7 @@ echo 'Nr3<br>';
 echo '-------<br>';
 /*	Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės
  A, B, C ir D, o ilgis 200. Suskaičiuokite kiek yra kiekvienos raidės.*/
- 
- 
- /*
+  
 $raides = ['A', 'B', 'C', 'D'];
 $raidziuMasyvas = array_fill(0, 200, 0);
 $a = 0;

@@ -127,7 +127,9 @@ echo '<br>';
 next($masyvas);
 print_r(current($masyvas));
 echo '<br>';
-print_r(key($masyvas));
+end($masyvas)
+print_r(current($masyvas));
+echo '<br>';
 
 reset ($masyvas);
 do {
