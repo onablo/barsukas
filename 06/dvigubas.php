@@ -42,10 +42,11 @@ foreach(range(1, 5) as $keyBig => $_) {
 print_r($masyvas);           // netaisiklingas masyvas  
 echo '<br>';
 echo '------------------------4<br>'; 
+
+
 // foreachint auksciau surasyto masyvo kodo
 //neleidzia, nes ne visi Big elementai yra masyvai(netaisiklingas), 
 // tam mes naudosim:
-
 
 echo '-----------------------------------------------------------<br>'; 
 $masyvas = [];

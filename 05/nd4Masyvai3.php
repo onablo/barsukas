@@ -103,7 +103,7 @@ echo '</div>';
 echo '<br>';
 echo 'Nr6<br>';
 echo '-------<br>';
-/* 6. Sugeneruokite du masyvus, kurių reikšmės yra atsitiktiniai     _nepabaigtas
+/* 6. Sugeneruokite du masyvus, kurių reikšmės yra atsitiktiniai     ??_nepabaigtas
 skaičiai nuo 100 iki 999. Masyvų ilgiai 100. Masyvų reikšmės turi 
 būti unikalios savo masyve (t.y. neturi kartotis). */
 
