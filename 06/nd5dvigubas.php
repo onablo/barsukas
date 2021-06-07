@@ -102,3 +102,25 @@ echo '----------<br>';
 atskirai ir sumas panaudokite kaip reikšmes sukuriant naują masyvą. 
 T.y. pirma naujo masyvo reikšmė turi būti lygi mažesnio masyvo, 
 turinčio indeksą 0 dideliame masyve, visų elementų sumai; */ 
+
+$sumaVal2 = 0;
+foreach ($masyvas as $val) { 
+    foreach ($val  as $val2) { 
+        $sumaVal2 += $val2;       
+        }       
+        $naujasMasyvas[] = $sumaVal2;
+        $sumaVal2 = 0;                  // be sitos salygos gausim reksmes(suma ankstesnio + naujas el ir pask bus = bendrai sumai)
+    }
+print_r($naujasMasyvas); 
+
+
+
+echo '<hr>';
+echo '</div>';
+echo '<br>';
+echo 'Nr 3 <br>';
+echo '----------<br>';
+/* 3.	Sukurkite masyvą iš 10 elementų. Kiekvienas masyvo elementas
+ turi būti masyvas su atsitiktiniu kiekiu nuo 2 iki 20 elementų. 
+ Elementų reikšmės atsitiktinai parinktos raidės iš intervalo A-Z. 
+ Išrūšiuokite antro lygio masyvus pagal abėcėlę (t.y. tuos kur su raidėm).*/
