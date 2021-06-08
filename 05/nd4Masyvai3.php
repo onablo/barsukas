@@ -140,3 +140,4 @@ echo '-------<br>';
 /*  7. Sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios
  yra pirmame 6 uždavinio masyve, bet nėra antrame 6 uždavinio masyve. */
 
+
