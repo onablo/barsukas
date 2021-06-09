@@ -10,7 +10,7 @@ foreach(range(1, 10) as $keyBig => $_) {
     $masyvas[$keyBig][$keySmall] = rand(5, 25);
     }
 }
-print_r($masyvas);              
+_d($masyvas);              
 
 
 
@@ -206,7 +206,9 @@ do {                //generuojam, kol masyvas prisipildys su 30 reiksmiu
         'place_in_row' => rand(0, 100)];    
 } while(count($masyvas) < 30);
 
-print_r($masyvas);  //  _d($masyvas);   _d($count);
+//print_r($masyvas);  //  
+_d($masyvas);   
+_d($count);
 
 
 
@@ -297,8 +299,28 @@ foreach (range(1, 10) as $key1 => $_) {
         }
     }
 }
-print_r($masyvas);            //_d($masyvas);
+print_r($masyvas);     // _d($masyvas); 
+echo '<br>';
 
+echo '-----Irmanto variantas-----<br>';
+echo '<br>';
+$masyvas = range(1, 10);
+
+foreach ($masyvas as $key => $value) {
+    $random = rand(0, 5);
+    if ($random > 0) {
+        $masyvas[$key] =  array_fill(0, $random, '');
+            foreach ($masyvas[$key] as $key => &$value) {
+                $value = rand(0, 10);
+            }
+            unset($value);
+    }
+    else {
+        $masyvas[$key] = $random;
+        
+    }
+}
+print_r($masyvas);
 
 
 echo '<hr>';

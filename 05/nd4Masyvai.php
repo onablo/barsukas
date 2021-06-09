@@ -22,9 +22,9 @@ $masyvas = [];
 foreach(range(1, 30) as $_) {
     $masyvas[] = rand(5, 25);
 }
-print_r($masyvas);
-//_d($masyvas);
-//_d(range(1, 30), 'Mano masyvas');
+//print_r($masyvas);
+_d($masyvas);
+_d(range(1, 30), 'Mano masyvas');
 //echo $masyvas;
 
 

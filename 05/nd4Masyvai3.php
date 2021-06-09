@@ -8,7 +8,7 @@ echo '-------<br>';
  for ($i = 0; $i < 50; $i++) {
     $raidziuMasyvas[] = $letters[rand(0, 3)];
  }
-print_r($raidziuMasyvas);
+_d($raidziuMasyvas);
 echo '<br>';
 echo '--------------------------------<br>';
 
