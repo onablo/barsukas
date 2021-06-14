@@ -5,28 +5,36 @@ ranka įvedus GET kintamąjį color su RGB spalvos
 kodu (pvz color=ff1234) puslapio fono spalva 
 pasidarytų tokios spalvos. -->
 
+<?php
+
+
+_d($_SERVER['REQUEST_METHOD']); 
+
+
+if (isset($_GET['color'])) {
+    $color = $_GET['color'];
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2 uzduotis</title>
 </head>
-<body>
-    <h1 style="color: green; margin: 40px;" >Kita spalva</h1>
-    <a style = "background-color: yellow; color: red; margin: 20px; padding: 15px; border-radius: 7px; "href="http://localhost/barsukas/10/ndWEB2.php" >Juoda</a>
-    <a style = "background-color: yellow; color: green; margin: 20px; padding: 15px; border-radius: 7px;"href ="?color=">Kita spalva</a>
-   
-    <?php
-    if (!empty($GET)) {
-        echo "<body style = 'background-color: #ff1234" . $_GET['color'] . "'></body>";
-    }
-    else {
-        echo "<body style = 'background-color: black'></body>";
-    }
 
-    ?>
+<body style="background-color: #<?=$color?>">
+    <h1 style= "color:grey; margin-left:20px; color:grey">Juodas</h1>
+    <h2> 
+    <a style= "display: block; margin: 20px;" href="./ndWEB2.php">Juoda</a>
+    <a style= "margin: 20px;" href="?color=">Kita spalva</a>
+   
+    </h2>
 
 </body>
 </html

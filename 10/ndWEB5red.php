@@ -13,7 +13,7 @@
     </form>
 
 <?php    
-    if (!empty($GET)) {
+    if (!empty($_GET)) {
         header('Location:http://localhost/barsukas/10/ndWEB5blue.php');
     }
     
