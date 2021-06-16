@@ -1,8 +1,36 @@
 <?php
 session_start();
-function redirect() {
+
+function redirect() 
+{
     header('Location: http://localhost/barsukas/11/agurkai/');
     die;
+}
+
+function redirectToAction($action, $id = 0) 
+{
+    if ($id) {
+        header('Location: http://localhost/barsukas/11/agurkai/?action='.$action.'&id='.$id);
+    }
+    else {
+        header('Location: http://localhost/barsukas/11/agurkai/?action='.$action);
+    }
+    die;
+}
+
+function getMessage()
+{
+    if (!isset($_SESSION['msg'])) {
+        return false;
+    }
+    $msg = $_SESSION['msg'];
+    unset($_SESSION['msg']);
+    return $msg;
+}
+
+function setMessage(string $msg)
+{
+    $_SESSION['msg'] = $msg;
 }
 
 // box ['id' => 25, 'amount' => 258]

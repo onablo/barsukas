@@ -2,7 +2,7 @@
 session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (!isset($_SESSION['results'])) {   // [5, 1]  [sugeneruota, pazymeta]
-    // 1 scenarijus Formos Rodymas GET
+    // 1 scenarijus Formos Rodymas GET (yra chekbox pazymeta)
     $letters = range('A', 'J');
     $count = rand(3, 10);
     $color = 'black';
