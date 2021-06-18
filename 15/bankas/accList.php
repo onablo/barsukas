@@ -15,9 +15,8 @@
         <li>Sąskaitos Nr. LT<?=$account['id']?></li>
         <li>Kliento vardas: </li>
         <li>Kliento pavardė: </li>
-        <li>Kliento vardas: </li>
         <li>Kliento asmens kodas: </li>
-        <li>Pinigų likutis :<?=$account['amount'] ?></li>             
+        <li>Pinigų likutis :<?=$account['amount']?></li>             
         [<a href = "?action = add-funds&id = <?=$account['id']?>">Papildyti</a>]
         [<a href = "?action = rem-funds&id = <?=$account['id']?>">Išimti</a>]
         <form action = "?action = delete&id = <?=$account['id']?>" method="post">

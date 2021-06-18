@@ -9,7 +9,7 @@
 <body>
     <?php include __DIR__ . '/menu.php' ?>
     <?php $id = $_GET['id'] ?? 0 ?>
-    <form action = "?action = add-funds & id = <?= $id ?>" method = "post">
+    <form action = "?action =add-funds&id=<?=$id?>" method = "post">
         <input type = "text" name = "amount">
         <button>Papildyti sąskaitą</button>
     </form>

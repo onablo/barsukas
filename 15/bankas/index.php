@@ -14,48 +14,48 @@ $accounts = json_decode( file_get_contents(__DIR__.'/accounts.json'), 1);
 
 // Sąskaitų sarašo atvaizdavimas GET
 
-if (!isset($_GET['action'])&& $_SERVER['REQUEST_METHOD']== 'GET') {
+if (!isset($_GET['action'])&& $_SERVER['REQUEST_METHOD'] == 'GET') {
     require __DIR__. '/accList.php';
 }
 
 // Sąskaitos papildymo atvaizdavimas GET
 
-elseif ($_GET['action'] == 'add-funds'&& $_SERVER['REQUEST_METHOD'] == 'GET') {
+elseif ($_GET['action'] == 'add-funds' && $_SERVER['REQUEST_METHOD'] == 'GET') {
     require __DIR__. '/addFunds.php';
 }
 
 // Sąskaitos papildymo vykdymas POST
 
-elseif ($_GET['action'] == 'add-funds'&& $_SERVER['REQUEST_METHOD']== 'POST') {
+elseif ($_GET['action'] == 'add-funds' && $_SERVER['REQUEST_METHOD'] == 'POST') {
     require __DIR__. '/doAddFunds.php';
 }
 
 // Pinigų išemimo atvaizdavimas GET
 
-elseif ($_GET['action'] == 'rem-funds'&& $_SERVER['REQUEST_METHOD'] == 'GET') {
+elseif ($_GET['action'] == 'rem-funds' && $_SERVER['REQUEST_METHOD'] == 'GET') {
     require __DIR__. '/remFunds.php';
 }
 
 // Pinigų išemimo vykdymas POST
 
-elseif ($_GET['action'] == 'rem-funds'&& $_SERVER['REQUEST_METHOD'] == 'POST') {
+elseif ($_GET['action'] == 'rem-funds' && $_SERVER['REQUEST_METHOD'] == 'POST') {
     require __DIR__. '/doRemFunds.php';
 }
 
  // Naujos sąskaitos atidarymo atvaizdavimas GET
 
-elseif ($_GET['action'] == 'add-account'&& $_SERVER['REQUEST_METHOD'] == 'GET') {
+elseif ($_GET['action'] == 'add-account' && $_SERVER['REQUEST_METHOD'] == 'GET') {
     require __DIR__. '/addAccount.php';
 } 
 
 // Naujos sąskaitos atidarymo vykdymas POST
 
-elseif ($_GET['action'] == 'add-account'&& $_SERVER['REQUEST_METHOD'] == 'POST') {
+elseif ($_GET['action'] == 'add-account' && $_SERVER['REQUEST_METHOD'] == 'POST') {
     require __DIR__. '/doAddAccount.php';
 } 
 
 // Sąskaitos uždarymo vykdymas POST
 
-elseif ($_GET['action'] == 'delete'&& $_SERVER['REQUEST_METHOD'] == 'POST') {
+elseif ($_GET['action'] == 'delete' && $_SERVER['REQUEST_METHOD'] == 'POST') {
     require __DIR__. '/doDelete.php';
 }

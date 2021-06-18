@@ -8,8 +8,8 @@
 </head>
 <body>
     <?php include __DIR__ . '/menu.php' ?>
-    <form action = "?action = add-account" method="post">
-        <button>Atidaryti sąskaitą</button>
+    <form action = "?action=add-account" method="post">
+        <button style = "padding: 10px, 0; margin: 10px; color: blue; border-radius: 7px;" >Atidaryti sąskaitą</button>
     </form>
 </body>
 </html>
