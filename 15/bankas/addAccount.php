@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php include __DIR__ . '/menu.php' ?>
-    <form action="?action=add-account" method="post">
+    <form action = "?action = add-account" method="post">
         <button>Atidaryti sąskaitą</button>
     </form>
 </body>
