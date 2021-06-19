@@ -13,9 +13,9 @@
     <ul>
     <?php foreach($accounts as $account) : ?>
         <li>Sąskaitos Nr. LT<?=$account['id'] ?></li>
-        <li>Kliento vardas: <?=$account['name'] ?><input type="text" name = "name"></li>         
-        <li>Kliento pavardė: <?=$account['surname'] ?><input type="text" name = "surname"></li>
-        <li>Kliento asmens kodas: <?=$account['personID'] ?><input type="text" name = "personID"></li>
+        <li>Kliento vardas: <?=$account['name'] ?></li>         
+        <li>Kliento pavardė: <?=$account['surname'] ?></li>
+        <li>Kliento asmens kodas: <?=$account['personID'] ?></li>
         <li>Pinigų likutis :<?=$account['amount']?></li>             
         [<a style = "margin: 10px; color: blue;" href = "?action = add&id = <?=$account['id']?>">Pridėti</a>]
         [<a style = "margin: 10px; color: red;" href = "?action = rem&id = <?=$account['id']?>">Nuskaičiuoti</a>]
