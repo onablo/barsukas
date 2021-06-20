@@ -10,6 +10,13 @@
     <?php include __DIR__ . '/menu.php' ?>
     <?php include __DIR__ . '/msg.php' ?>
     <ul>
+
+    <?php
+        usort($accounts, function($a, $b) {
+            return $b['surname'] <=> $a['surname'];
+        })
+    ?>
+
     <?php foreach($boxes as $box) : ?>
         <li>
             Dėžė Nr. <?= $box['id'] ?> Viso agukų: <?= $box['amount'] ?>

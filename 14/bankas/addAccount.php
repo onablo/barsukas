@@ -7,12 +7,13 @@
     <title>Atidaryti sąskaitą</title>
 </head>
 <body>
-    <?php include __DIR__ . '/menu.php' ?>
-    <form action = "?action=add-account" method="post">
-        <button style = "padding: 10px, 0; margin: 10px; background-color: violet; color: blue; border-radius: 7px;" >Atidaryti sąskaitą</button><br>
-        <input type="text" name = "name">Vardas<br>
-        <input type="text" name = "surname">Pavardė<br>
-        <input type="text" name = "personID">Asmens kodas<br>
+    <?php include __DIR__. '/menu.php' ?>
+    <form action ="?action=add-account" method="post">        
+        <input type="text" name ="name">Vardas<br>
+        <input type="text" name ="surname">Pavardė<br>
+        <input type="text" name ="personID">Asmens kodas<br>
+        <button style="padding: 10px, 0; margin: 10px; background-color: violet; color: blue; border-radius: 7px;" >Atidaryti sąskaitą</button><br> 
     </form>
 </body>
 </html>
+
