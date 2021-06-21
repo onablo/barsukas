@@ -10,6 +10,13 @@
     <?php include __DIR__ . '/menu.php' ?>
     <?php include __DIR__ . '/msg.php' ?>
     <ul>
+
+    <?php
+        usort($accounts, function($a, $b) {
+            return $a['surname'] <=> $b['surname'];
+        })
+    ?>
+    
     <?php foreach($accounts as $account) : ?>
         <li>Sąskaitos Nr. LT9873000100<?=$account['id'] ?></li>
         <li>Kliento vardas: <?=$account['name'] ?></li>         
@@ -17,7 +24,7 @@
         <li>Kliento asmens kodas: <?=$account['personID'] ?></li>
         <li>Lėšų likutis : <?= $account['amount']?></li>     
 
-        [<a style="margin: 10px; color: blue;" href="?action=add&id=<?= $account['id'] ?>">Pridėti į sąskaitą</a>]
+        [<a style="margin: 10px; color: blue;" href="?action=add&id=<?= $account['id'] ?>">Pridėti lėšų</a>]
 
         [<a style="margin: 10px; color: red;" href="?action=rem&id=<?= $account['id'] ?>">Nuskaičiuoti</a>]
 
@@ -30,7 +37,5 @@
     
 </body>
 </html>
-
-
 
 

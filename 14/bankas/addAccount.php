@@ -8,7 +8,8 @@
 </head>
 <body>
     <?php include __DIR__. '/menu.php' ?>
-    <form action ="?action=add-account" method="post">        
+    <form action ="?action=add-account" method="post">  
+        <input type="text" name ="name">Sąskaitos Nr<br>      
         <input type="text" name ="name">Vardas<br>
         <input type="text" name ="surname">Pavardė<br>
         <input type="text" name ="personID">Asmens kodas<br>
