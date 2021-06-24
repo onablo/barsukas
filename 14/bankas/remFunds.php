@@ -7,6 +7,7 @@
     <title>Išimti lėšas</title>
 </head>
 <body>
+    
     <?php include __DIR__.'/menu.php' ?>
     <?php $id=$_GET['id'] ?? 0 ?>    
     <form action="?action=rem&id=<?=$id?>"method="post">
@@ -16,7 +17,7 @@
         <?php foreach ($accounts as $account) { 
             if ($account['id'] == $id) {
                 echo '<br>';
-                echo 'Sąskaitos Nr: LT9873000100'.$account['id'];
+                echo 'Sąskaitos Nr: '.$account['id'];
                 echo '<br>';
                 echo $account['name'];
                 echo $account['surname'];

@@ -10,37 +10,24 @@ class Kibiras1
     protected $akmenuKiekis = 0;
     
 
-    public function prideti1Akmeni($akmenuKiekis) 
+    public function prideti1Akmeni() 
     { 
-        if (!is_integer($akmenuKiekis)) {                
-            return;
-        }
-        $akmuo = $this->akmenuKiekis++;
-        echo '<br>';
-        echo " Akmenų yra: $akmuo";
+        $this->akmenuKiekis++;
     }
 
-    public function pridetiDaugAkmenu($daug) 
-    { 
+    public function pridetiDaugAkmenu($daug)  //set
+    {                                         //uztenka func(int $kiekis)vietoje validacijos
         if (!is_integer($daug)) {                
             return;
         }  
-        $akmenysPrideta = $this->akmenuKiekis + $daug;  
-        echo '<br>';
-        echo " Pridėta akmenų: $akmenysPrideta";       
-                     
+        $this->akmenuKiekis += $daug;  
     }
 
-    public function kiekPririnktaAkmenu($akmenysPrideta) 
+    public function kiekPririnktaAkmenu()  //get
     {  
-        $akmenysKiek = $this->akmenuKiekis += $akmenysPrideta;
-        echo '<br>';      
-        echo "Kibire akmenu yra: $akmenysKiek";
-                  
+        return $this->akmenuKiekis ;
+
     }
-}    
-
-
+} 
    
-
 

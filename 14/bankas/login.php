@@ -1,13 +1,13 @@
 <?php
-
+session_start();
 require __DIR__ . '/bootstrap.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (isset($_GET['logout'])) {
         //2. Atjungia juseri
         unset($_SESSION['logged'], $_SESSION['name']);
-        setMessage('Ate');
-        header('Location: http://localhost/barsukas/12/login/login.php');
+        setMessage('Geros dienos   (:');
+        header('Location: http://localhost/barsukas/14/bankas/login.php');
         die;
     }
         //1. Rodyti forma
@@ -21,13 +21,13 @@ else {
                 $_SESSION['logged'] = 1;
                 $_SESSION['name'] = $user['name'];
                 setMessage('Labas, '.$user['name']);
-                header('Location: http://localhost/barsukas/12/login/member.php');
+                header('Location: http://localhost/barsukas/14/bankas/member.php');
                 die;
             }
         }
     }
-    setMessage('Labai Blogai');
-    header('Location: http://localhost/barsukas/12/login/login.php');
+    setMessage('Patikrinkit prisijungimo duomenis!');
+    header('Location: http://localhost/barsukas/14/bankas/login.php');
     die;
 }
 ?>
@@ -43,7 +43,7 @@ else {
     <?php include __DIR__ . '/msg.php' ?>
     <?php include __DIR__ . '/menu.php' ?>
     <h1>Login</h1>
-    <form action="http://localhost/barsukas/12/login/login.php" method="post">
+    <form action="http://localhost/barsukas/14/bankas/login.php" method="post">
     <input type="text" name="name">
     <input type="password" name="pass">
     <button type="submit">Login</button>

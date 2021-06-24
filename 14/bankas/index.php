@@ -1,5 +1,9 @@
 <?php
+
 session_start();
+require __DIR__.'/bootstrap.php';
+
+
 function redirect() {
     header('Location: http://localhost/barsukas/14/bankas/');
     die;
@@ -15,19 +19,7 @@ function redirectToAction($action, $id = 0) {
     die;
 }
 
-function getMessage()
-{
-    if (!isset($_SESSION['msg'])) {
-        return false;
-    }
-    $msg = $_SESSION['msg'];
-    unset($_SESSION['msg']);
-    return $msg;
-}
 
-function setMessage(string $msg) {
-    $_SESSION['msg'] = $msg;
-}
 
 // account list ['account nr' => 1, 'name' => Jonas, 'surname' => Jonaitis, 'personid' => 1, 'account balance' => 0]
 
@@ -35,6 +27,7 @@ if (!file_exists(__DIR__.'/accounts.json')) {
     file_put_contents(__DIR__. '/accounts.json',json_encode([]));
 }
 $accounts=json_decode( file_get_contents(__DIR__.'/accounts.json'), 1);
+
 
 // Sąskaitų sarašo atvaizdavimas GET
 
@@ -82,4 +75,14 @@ elseif ($_GET['action'] == 'add-account' && $_SERVER['REQUEST_METHOD'] == 'POST'
 
 elseif ($_GET['action'] == 'delete' && $_SERVER['REQUEST_METHOD'] == 'POST') {
     require __DIR__.'/doDelete.php';
+}
+// Formos rodymas Login POST
+
+else if($_GET['action'] == 'login' && $_SERVER['REQUEST_METHOD'] == 'POST') {
+    require __DIR__. '/login.php';
+}
+
+//  Atsijungimas Logout GET
+else if ($_GET['action'] == 'logout' && $_SERVER['REQUEST_METHOD'] == 'GET') {
+    require __DIR__. '/logout.php';
 }

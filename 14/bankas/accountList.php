@@ -9,6 +9,8 @@
 <body>
     <?php include __DIR__ . '/menu.php' ?>
     <?php include __DIR__ . '/msg.php' ?>
+    
+
     <ul>
 
     <?php
@@ -16,9 +18,12 @@
             return $a['surname'] <=> $b['surname'];
         })
     ?>
+
     
-    <?php foreach($accounts as $account) : ?>
-        <li>Sąskaitos Nr. LT9873000100<?=$account['id'] ?></li>
+    
+<?php foreach($accounts as $account) : ?>
+        
+        <li>Sąskaitos Nr: <?=$account['id'] ?></li>
         <li>Kliento vardas: <?=$account['name'] ?></li>         
         <li>Kliento pavardė: <?=$account['surname'] ?></li>
         <li>Kliento asmens kodas: <?=$account['personID'] ?></li>
@@ -31,7 +36,6 @@
         <form action="?action=delete&id=<?=$account['id'] ?>" method="post">
             <button style="padding: 5px, 0; margin: 10px; background-color: red; border-radius: 7px;" type="submit">Uždaryti sąskaitą</button><br><br>
         </form>
-
     <?php endforeach ?>
     </ul>
     
