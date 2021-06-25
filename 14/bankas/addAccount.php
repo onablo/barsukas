@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,25 +16,19 @@ sukurti kintamaji su banko saskaita
     //ir ji padidine vienetu issaugom atgal
     $bankId = "LT98730001007276". $jsonSkaiciukas;
    // . $jsonSkaiciukas" disabled // ir ji paduoti i value su if    //name    -->         
+<body>
 
+    <?php include __DIR__ . '/menu.php' ?>
 
-<?php include __DIR__. '/menu.php' ?>
-
-
-<body>    
-    <?php $id=$_GET['id'] ?? 0 ?>
-    <form action="?action=add&id=<?= $id ?>" method="post">
-        <div><br>Sąskaitos Nr: <span><?= "id" ?></span> </div>
-
-
-    </form>
-    
-    <form action ="?action=add-account" method="post"> 
+   <form action ="?action=add-account" method="post"> 
         
+        <br>
         <input type="text" name ="name">Vardas<br>
         <input type="text" name ="surname">Pavardė<br>
-        <input type="text" name ="personID">Asmens kodas<br>
+        <input type="text" name ="personID">Asmens kodas
+        <div>Sąskaita: <span></span> </div>
         <button style="padding: 10px, 0; margin: 10px; background-color: violet; color: blue; border-radius: 7px;" >Atidaryti sąskaitą</button><br> 
     </form>
+
 </body>
 </html> 

@@ -6,9 +6,15 @@ foreach ($accounts as &$account) {
         if ($account['amount'] < (int) $_POST['amount']) {        
             setMessage('Tiek lėšų nėra.');
             redirect();
-        } elseif ((int) $_POST['amount'] < 0) {
+        }
+        if ((int) $_POST['amount'] < 0) {
             setMessage('Negali buti suma mažesnė už 0!');
             redirect();
+        }
+        if (empty($_POST["amount"])) {
+            setMessage('Neužpildytas sumos laukelis!');
+            redirect();           
+           
         }
             
         $account['amount']-= (int) $_POST['amount'];

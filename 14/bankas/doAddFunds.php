@@ -3,9 +3,15 @@
 $id = $_GET['id'] ?? 0;
 foreach ($accounts as &$account) {
     if ($account['id'] == $id) {
-        if ((int) $_POST['amount'] < 0) {
+        if ((int) $_POST['amount'] < 0) { 
             setMessage('Negali buti suma mažesnė už 0!');
             redirect();
+        }
+        if (empty($_POST["amount"])) {
+            setMessage('Neužpildytas sumos laukelis!');
+            redirect();
+            
+           
         }
             
         $account['amount']+= (int) $_POST['amount'];
