@@ -16,14 +16,15 @@ class Kibiras1
     }
 
     public function pridetiDaugAkmenu($daug)  //set
-    {                                         //uztenka func(int $kiekis)vietoje validacijos
+    {                                         //uztenka func(int $kiekis)
+                                              //vietoje validacijos
         if (!is_integer($daug)) {                
             return;
         }  
         $this->akmenuKiekis += $daug;  
     }
 
-    public function kiekPririnktaAkmenu()  //get
+    public function kiekPririnktaAkmenu()    //get
     {  
         return $this->akmenuKiekis ;
 

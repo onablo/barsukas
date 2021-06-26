@@ -12,35 +12,27 @@
 
 
 class Pinigine {
-
     private $popieriniaiPinigai = 0;
     private $metaliniaiPinigai = 0;
 
-    public function ideti($kiekis) {
-        if (!is_integer($kiekis)) {
-            return;
-        }
-        elseif ($kiekis > 0 && $kiekis <= 2) {
+
+    public function ideti(float $kiekis) 
+    {
+        if ($kiekis < 2 ) {
             $this->metaliniaiPinigai += $kiekis;
-            echo '<br>';
-            echo "Pridėta prie metalinių pinigų: $kiekis<br>";
-        }        
-        else if ($kiekis > 2) {
+        }
+        else {
             $this->popieriniaiPinigai += $kiekis;
-            echo '<br>';
-            echo "Pridėta prie popierinių pinigų: $kiekis<br>";
-        }        
+        }
     }
-    public function skaiciuoti($sum) {        
-        $sum = $this->popieriniaiPinigai + $this->metaliniaiPinigai;
+
+    public function skaiciuoti()
+    {
+        echo $this->metaliniaiPinigai + $this->popieriniaiPinigai;
         echo '<br>';
-        echo " Bendra pinigų suma: $sum";
     }
+} 
 
-}
 
 
-        
-        
 
- 
