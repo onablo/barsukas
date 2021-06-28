@@ -1,27 +1,18 @@
 <?php
 
+include __DIR__. './Miskas.php';
 
-class Zveris extends Miskas {
+class Zveris extends Miskas{
 
     protected $name;
 
-    
-    protected function papasakok() 
-    { 
-        echo "Aš esu žvėris vardu $this->name.";      
+    protected function papasakok() {
+        echo "Aš esu žvėris vardu $this->name.";
+        parent::papasakok();
     }
 
-    public static function getName()
-    {
-    return self::$name ?? self::$name = new self;
+    public function pasakojimas() {
+        $this->papasakok();
     }
 
-    public function __construct($name)
-    {
-        $this->name = $name;
-        
-    }
-
-    
 }
-

@@ -1,20 +1,9 @@
 <?php
 
-require __DIR__ . '/Miskas.php';
-require __DIR__ . '/Zveris.php';
-
-$Zveris = new Miskas;
+include __DIR__. './Zveris.php';
 
 
+$miskas1 = new Miskas('Gulbinų');
+$zveris1 = new Zveris('Girių karalius');
 
-
-
-$Miskas->papasakok('Zalias');
-$Zveris->papasakok('Linksmas');   
-$Zveris->papasakok('Pasaka');
-
-
-
-_d($Miskas->papasakok(), '1');
-_d($Zveris::papasakok(), '2');
-
+$zveris1->pasakojimas();

@@ -14,19 +14,14 @@
 // metodą papasakok(). 
 
 class Miskas {
-    protected $name = '';
+    protected $name;
 
+    public function __construct($prop) {
+        $this->name = $prop;
+    }
     protected function papasakok() {
-        echo "Aš gyvenu miške pavadintame $this->name, o kur tu?.";
+        echo "As gyvenu miske pavadintame $this->name, o kur tu?";
+    
     }
-
-
-    public function __construct($name)
-    {
-        $this->name = $name;        
-    }
-
-
-
 }
 
