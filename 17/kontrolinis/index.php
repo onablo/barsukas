@@ -8,17 +8,17 @@
 </head>
 <body>
     <form action="" method="get">
-    <input type="text" name="_0"><br><br>
+    <input type="text" name="_0"><br><br>   //
     <input type="text" name="_1"><br><br>
     <input type="text" name="_2"><br><br>
     <button type="submit">GO</button>
     </form>
 
-    <?php
-    if (!empty($_GET)) {
-        $m = [];
-        if (is_numeric($_GET['_0'])) {
-            $m[] = $_GET['_0'];
+    <?php           // auksciau _0 -nes negali name prasideti skaiciumi
+    if (!empty($_GET)) {    
+        $m = [];    // susikuriam tuscia masyva
+        if (is_numeric($_GET['_0'])) {  
+            $m[] = $_GET['_0']; //ir i sita masyva g. irasyti sita reiksme
         }
         if (is_numeric($_GET['_1'])) {
             $m[] = $_GET['_1'];
@@ -27,7 +27,7 @@
             $m[] = $_GET['_2'];
         }
     }
-    //rsort($m);
+    rsort($m);
     echo '<pre>';
     print_r($m);
     echo '</pre>';

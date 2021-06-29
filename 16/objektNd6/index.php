@@ -9,7 +9,7 @@ $stikline100 = new Stikline(100);
 
 $stikline100->ipilti(
     $stikline150->ipilti(
-        $stikline200->ipilti(1000)->ispilti()
+        $stikline200->ipilti(1000)->ispilti() //pradzia nuo viduriuko
     )->ispilti()
 );
 
