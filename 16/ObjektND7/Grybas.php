@@ -12,27 +12,23 @@
 
 class Grybas {
 
-    private $valgomas;      
-    private $sukirmijes;    
-    private $svoris;        
+    private $valgomas, $sukirmijes, $svoris;        
 
+    //kadangi yra 3 private savybes priskiriamos, kai grybas 
+    //yra sukuriamas, mums reik konstruktoriaus
+    
     public function __construct() {
         $this->valgomas = rand(0, 1) == 1 ? true : false;
         $this->sukirmijes = rand(0, 1) == 1 ? true : false;
         $this->svoris = rand(5, 45);
+        echo '<h6>Grybas</h6>';
     }
 
     public function __get($prop) {
-        if($prop == 'valgomas') {
-            return $this->valgomas;
-        }
-        if($prop == 'sukirmijes') {
-            return $this->sukirmijes;
-        }
-        if($prop == 'svoris') {
-            return $this->svoris;
-        }
+        
+            return $this->$prop;
+        
+        
     }   
 
-    
-}
+}   

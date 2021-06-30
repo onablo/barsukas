@@ -16,6 +16,7 @@
 // metodu perduotiKamuoliuka() perduoti kamuoliuką kitam 
 // žaidėjui ir grąžinti atgal iš kito žaidėjo objekto. 
 
+
 class Tenisininkas {
 
     private $vardas;
@@ -96,4 +97,4 @@ class Tenisininkas {
 
     }
 
-}
+} 

@@ -11,7 +11,7 @@ require DIR.'app/AgurkaiController.php';
 $uri = str_replace(INSTALL_DIR, '', $_SERVER['REQUEST_URI']);
 $uri = explode('/', $uri);      //vertimas i masyva
 
-_d($uri);
+//_d($uri);
 
 
 // ROUTER

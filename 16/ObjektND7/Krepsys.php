@@ -2,11 +2,15 @@
 
 class Krepsys
 {
-    const didis = 500;
+    const DYDIS = 500;
+    private $pririnkta = 0;
 
-    public function pilnasKrepsys()
-    {         
-        return self::didis;
+    public function deti(Grybas $grybas)
+    {   
+        if ($grybas->valgomas && !$grybas->sukirmijes) {
+            $this->pririnkta += $grybas->svoris;
+        }     
+        return self::DYDIS > $this->pririnkta;
     }
 
 }
