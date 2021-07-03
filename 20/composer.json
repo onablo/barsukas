@@ -1,0 +1,21 @@
+{
+    "name": "ana/20",
+    "description": "bla bla",
+    "authors": [
+        {
+            "name": "Ana onablo",
+            "email": "79449819+onablo@users.noreply.github.com"
+        }
+    ],        
+    "autoload": {           
+        "psr-4": {
+            "Zoo\\": "",
+            "Australia\\": "australai",
+            "Belgium\\": "belgai"
+        }
+    },           
+   
+    "require": {
+        "ramsey/uuid": "^4.1"
+    }
+}
