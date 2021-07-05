@@ -26,13 +26,13 @@ class MarsoPalydovas {
 
     public static function palydovas() 
     {
-        if (!isset(self::$palydovai[0])) {
+        if (!isset(self::$palydovai[0])) {      //jeigu pirmo nera, kuriam Deima
             return self::$palydovai[0] = new self('Deimas');
         }
-        if (!isset(self::$palydovai[1])) {
+        if (!isset(self::$palydovai[1])) {      //jeigu nera antro k. Foba
             return self::$palydovai[1] = new self('Fobas');
         }
-        return self::$palydovai[rand(0, 1)];
+        return self::$palydovai[rand(0, 1)];    //jeigu yra abudu tai grazinam viena is sukurtu
     }
 
 }

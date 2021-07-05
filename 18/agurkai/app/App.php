@@ -3,16 +3,16 @@
 class App {
 
     public static function start()  //-kad prieiti prie 
-                                    // statinio metodo sukuriam metoda
-    {
-        ob_start();
-        self::router();
-        ob_end_flush();
+                                    // statinio metodo sukuriam metoda ir cia paleidziam buferi
+    {                               //tam kad neiseitu bodys, nes jau negalesim paleisti headerio
+        ob_start();                 //-pastatom kibira
+        self::router();             //-pasileidziam routeri, viskas subega i kibira ir neiseina i narsykle echoinimo keliu
+        ob_end_flush();             //-kai viskas surinkta, ispilam i narsykle
     }
-
-    public static function view($file, $data = [])                                  
-    {
-        extract($data);
+                                    //dar vienas helperis:
+    public static function view($file, $data = [])  //jeigu nieko nereikia perduoti, musu data = tuscias masyvas                          
+    {                           
+        extract($data);             //isekstaktina is arreyaus, compact- sudeda i arrey
         require DIR.'views/'.$file.'.php';
     }
 

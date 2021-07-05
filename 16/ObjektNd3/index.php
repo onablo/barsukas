@@ -11,10 +11,10 @@ echo '<pre>';
 var_dump($kibirasA);
 echo '<br>';
 
-var_dump($kibirasA);
+var_dump($kibirasB);
 echo '<br>';
 
-var_dump($kibirasA);
+var_dump($kibirasC);
 echo '<br>';
 
 
