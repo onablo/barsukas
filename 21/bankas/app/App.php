@@ -52,10 +52,10 @@ class App {
 
         if ('remFunds' == $uri[0] && isset($uri[1])) {
             if ('GET' == $_SERVER['REQUEST_METHOD']) {
-                return (new BankController)->remove($uri[1]);
+                return (new BankController)->removeFunds($uri[1]);
             }
             else {
-                return (new BankController)->doRemove($uri[1]);
+                return (new BankController)->doRemoveFunds($uri[1]);
             }
         }
 
