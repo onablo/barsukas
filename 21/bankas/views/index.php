@@ -9,11 +9,11 @@
         <li>Kliento asmens kodas: <?=$account['personID'] ?></li>
         <li>Lėšų likutis : <?= $account['amount']?></li>     
 
-        [<a style="margin: 10px; color: blue;" href="=add/<?= $account['id'] ?>">Pridėti lėšų</a>]
+        [<a style="margin: 10px; color: blue;" href="<?= URL ?>add/<?= $account['id'] ?>">Pridėti lėšų</a>]
 
-        [<a style="margin: 10px; color: red;" href="=rem/=<?= $account['id'] ?>">Nuskaičiuoti</a>]
+        [<a style="margin: 10px; color: red;" href="<?= URL ?>rem/<?= $account['id'] ?>">Nuskaičiuoti</a>]
 
-        <form action="delete/<?=$account['id'] ?>" method="post">
+        <form action="<?= URL ?>delete/<?=$account['id'] ?>" method="post">
             <button style="padding: 5px, 0; margin: 10px; background-color: red; border-radius: 7px;" type="submit">Uždaryti sąskaitą</button><br><br>
         </form>
     <?php endforeach ?>

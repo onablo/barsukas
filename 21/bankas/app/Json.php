@@ -31,14 +31,14 @@ class Json implements DataBase {
     
     public function create(array $accountData) : void
     {
-        $this->data[] = $accountData;
+        $this->data[] = $accountData;   //irasome i json faila, bent ka galim rasyti
     }
 
-    public function update(int $accountId, array $accountData) : void
-    {
+    public function update(int $accountId, array $accountData) : void   
+    {   //foricinam data ir istraukiam account
         foreach ($this->data as $index => $account) {
             if ($account['id'] == $accountId) {
-                $this->data[$index] = $accountData;
+                $this->data[$index] = $accountData; //ir irasom
                 return;
             }
         }
@@ -48,7 +48,7 @@ class Json implements DataBase {
     {
         foreach ($this->data as $index => $account) {
             if ($account['id'] == $accountId) {
-                unset($this->data[$index]);
+                unset($this->data[$index]); //cia unsetinam
                 return;
             }
         }

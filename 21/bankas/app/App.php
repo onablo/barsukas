@@ -13,7 +13,7 @@ class App {
     public static function view($file, $data = [])
     {
         extract($data);
-        require DIR.'views/'.$file.'.php';
+        require \DIR.'views/'.$file.'.php';
     }
 
     public static function redirect($path = '') 
@@ -24,14 +24,11 @@ class App {
 
     private static function router()
     {
-        // $uri = str_replace(INSTALL_DIR, '', $_SERVER['REQUEST_URI']);
+        //$uri = str_replace(INSTALL_DIR, '', $_SERVER['REQUEST_URI']);
         $uri = $_SERVER['REQUEST_URI'];
-
         $uri = explode('/', $uri);
-
         array_shift($uri);
-
-
+                                            //print_r($uri);
 
         if ('create-account' == $uri[0]) {
             if ('GET' == $_SERVER['REQUEST_METHOD']) {
@@ -41,34 +38,37 @@ class App {
                 return (new BankController)->save();
             }
         }
-        if ('addFunds' == $uri[0] && isset($uri[1])) {
+
+
+        if ('add' == $uri[0] && isset($uri[1])) {
             if ('GET' == $_SERVER['REQUEST_METHOD']) {
-                return (new BankController)->addFunds($uri[1]);
+                return (new BankController)->add($uri[1]);
             }
             else {
-                return (new BankController)->doAddFunds($uri[1]);
+                return (new BankController)->doAdd($uri[1]);
             }
         }
 
-        if ('remFunds' == $uri[0] && isset($uri[1])) {
+
+        if ('rem' == $uri[0] && isset($uri[1])) {
             if ('GET' == $_SERVER['REQUEST_METHOD']) {
-                return (new BankController)->removeFunds($uri[1]);
+                return (new BankController)->remove($uri[1]);
             }
             else {
-                return (new BankController)->doRemoveFunds($uri[1]);
+                return (new BankController)->doRemove($uri[1]);
             }
         }
+
 
         if ('delete' == $uri[0] && isset($uri[1]) && 'POST' == $_SERVER['REQUEST_METHOD']) {
             return (new BankController)->delete($uri[1]);
         }
 
 
-
         if ($uri[0] == 'testas' && isset($uri[1])) {
-            $ac = new BankController;
-            return $ac->bankTest($uri[1]);
-        }
+            $bc = new BankController;
+            return $bc->bankTest($uri[1]);
+        }        
         if ($uri[0] === '' && count($uri) === 1) {
             return (new BankController)->index();
         }

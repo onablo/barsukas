@@ -1,6 +1,6 @@
 <?php require DIR.'views/top.php' ?>
 
-<form action ="<?= URL ?> create-account" method="post"> 
+<form action="<?= URL ?>create-account" method="post"> 
         
         <br>
         <input style ="color:blue;" type="text" name ="id" value ="<?='LT98730001007276'. rand(1000, 9999) ?>"><br>

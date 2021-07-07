@@ -15,26 +15,26 @@ class BankController {
         return App::view('index', ['accounts' => Json::getJson()->showAll()]);
     }
 
-    public function addFunds($id)
+    public function add($id)
     {
         return App::view('add', ['id' => $id]);
     }
 
-    public function doAddFunds($id)
+    public function doAdd($id)
     {
         $id = (int) $id;
-        $account = Json::getJson()->show($id);
-        $account['amount'] += (int) $_POST['amount'];
+        $account = Json::getJson()->show($id);  //pasiima sena account is jsono
+        $account['amount'] += (int) $_POST['amount'];   //kai turi konkr. sask, issaugom - update
         Json::getJson()->update($id, $account);
-        App::redirect();
+        App::redirect();    //i pradini psl
     }
 
-    public function removeFunds($id)
+    public function remove($id)
     {
         return App::view('remove', ['id' => $id]);
     }
 
-    public function doRemoveFunds($id)
+    public function doRemove($id)
     {
         $id = (int) $id;
         $account = Json::getJson()->show($id);
