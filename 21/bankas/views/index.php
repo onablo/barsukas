@@ -1,5 +1,6 @@
 <?php require DIR.'views/top.php' ?>
 
+
 <ul>
     <?php foreach($accounts as $account) : ?>
         

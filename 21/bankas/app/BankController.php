@@ -11,7 +11,9 @@ class BankController {
     }
 
     public function index()
+
     {
+       
         return App::view('index', ['accounts' => Json::getJson()->showAll()]);
     }
 

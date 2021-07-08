@@ -11,7 +11,9 @@ class App {
     }
 
     public static function view($file, $data = [])
-    {
+    { 
+      
+
         extract($data);
         require \DIR.'views/'.$file.'.php';
     }
@@ -28,8 +30,8 @@ class App {
         $uri = $_SERVER['REQUEST_URI'];
         $uri = explode('/', $uri);
         array_shift($uri);
-                                            //print_r($uri);
-
+                        //print_r($uri);
+                        //die;
         if ('create-account' == $uri[0]) {
             if ('GET' == $_SERVER['REQUEST_METHOD']) {
                 return (new BankController)->create();

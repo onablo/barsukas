@@ -7,3 +7,5 @@
     <title>Objektinis bankas</title>
 </head>
 <body>   
+<a style="padding: 10px; color: blue;" href="<?= URL ?>create-account">Atidaryti banko sąskaitą</a>
+
