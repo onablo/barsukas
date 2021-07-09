@@ -24,7 +24,7 @@ class BankController {
 
     public function doAdd($id)
     {
-        $id = (int) $id;
+        $id = $id;
         $account = Json::getJson()->show($id);  //pasiima sena account is jsono
         $account['amount'] += (int) $_POST['amount'];   //kai turi konkr. sask, issaugom - update
         Json::getJson()->update($id, $account);
@@ -38,7 +38,7 @@ class BankController {
 
     public function doRemove($id)
     {
-        $id = (int) $id;
+        $id = $id;
         $account = Json::getJson()->show($id);
         $account['amount'] -= (int) $_POST['amount'];
         Json::getJson()->update($id, $account);

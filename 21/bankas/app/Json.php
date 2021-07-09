@@ -34,7 +34,7 @@ class Json implements DataBase {
         $this->data[] = $accountData;   //irasome i json faila, bent ka galim rasyti
     }
 
-    public function update(int $accountId, array $accountData) : void   
+    public function update($accountId, array $accountData) : void   
     {   //foricinam data ir istraukiam account
         foreach ($this->data as $index => $account) {
             if ($account['id'] == $accountId) {
@@ -54,8 +54,9 @@ class Json implements DataBase {
         }
     } 
 
-    public function show(int $accountId) : array
+    public function show($accountId) : array
     {
+        print_r($accountId);
         foreach ($this->data as $index => $account) {
             if ($account['id'] == $accountId) {
                 return $this->data[$index];
