@@ -44,7 +44,7 @@ class Json implements DataBase {
         }
     } 
 
-    public function delete(int $accountId) : void
+    public function delete($accountId) : void
     {
         foreach ($this->data as $index => $account) {
             if ($account['id'] == $accountId) {

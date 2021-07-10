@@ -1,6 +1,6 @@
 <?php
 
-class Antras extends Stogas {
+class Antras extends Pirmas {
 
     public function doAntras()
     {

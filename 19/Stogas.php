@@ -1,6 +1,6 @@
 <?php
 
-class Stogas implements PlanasStogui {
+class Stogas extends Antras implements PlanasStogui {
 
     public function doStogas()
     {

@@ -21,8 +21,8 @@ require __DIR__ .'/vendor/autoload.php';
 // });
 
 // spl_autoload_register(function ($class) {
-//     $prefix = 'Australia\\';
-//     $base_dir = __DIR__ . '/australai/';
+//     $prefix = 'Australia\\';     pas mus tokio folderio nera
+//     $base_dir = __DIR__ . '/australai/';     yra folderis australai
 //     $len = strlen($prefix);
 //     if (strncmp($prefix, $class, $len) !== 0) {
 //         return;
@@ -63,6 +63,7 @@ require __DIR__ .'/vendor/autoload.php';
 // });
 
 
+        //ir po surasymo - zemiau es. nebereikia
 
 // require __DIR__ . '/australai/Animal.php';
 // require __DIR__ . '/belgai/Animal.php';
