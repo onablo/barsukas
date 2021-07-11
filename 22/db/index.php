@@ -3,9 +3,9 @@
 
 $host = '127.0.0.1';
 $db   = 'f22';
-$user = 'root';
-$pass = '';
-$charset = 'utf8mb4';
+$user = 'root';         // DB vartuotojas
+$pass = '';             // slaptazodis
+$charset = 'utf8mb4';   //default charset
 
 
 
@@ -23,7 +23,7 @@ $options = [
 
 $pdo = new PDO($dsn, $user, $pass, $options);
 
-// Seeder
+// Seeder, gener 0-1500/100 metru
 $trees = [
     ['Beržas', rand(0, 1500) / 100, 1],
     ['Eglė', rand(0, 1500) / 100, 2],
@@ -46,4 +46,50 @@ $n = rand(0, count($trees) -1 );
 $sql = "INSERT INTO trees (`name`, height, `type`)
 VALUES ('".$trees[$n][0]."', ".$trees[$n][1].", ".$trees[$n][2].")
 ";
+$pdo->query($sql);      //php tik uzklausos issiuntimas
+
+
+
+//Skaitymas         - cia php issincia ir t gauti is DB
+//SELECT column1, column2, column3,... FROM table_name
+
+$sql = "SELECT id, `name`, height, `type`
+FROM trees
+WHERE (`type` = 2 AND height > 10) OR (`type` = 1 AND height < 10) OR `type` = 3
+ORDER BY `name` DESC            
+-- LIMIT 5
+";              // - rusiavimas
+$stmt = $pdo->query($sql); // DB steitmentas(kuris yra objektas)
+while ($row = $stmt->fetch()) // duok man viena eilute
+{
+    echo $row['id'].' '.$row['name'].' '.$row['height'].' '.$row['type'].'<br>';
+}
+
+
+
+//Redagavimas
+// UPDATE table_name
+// SET column1=value, column2=value2,...
+// WHERE some_column=some_value 
+$sql = "UPDATE trees
+SET height = 2.20, `name` = 'Mažas Beržas'
+WHERE `name` = 'Beržas'
+";
 $pdo->query($sql);
+
+
+$sql = "UPDATE trees
+SET height = 55.00
+WHERE id = 25
+";
+$pdo->query($sql);
+
+
+//Trynimas          - cia istrinam visa eilute
+// DELETE FROM table_name
+// WHERE some_column = some_value
+$sql = "DELETE FROM trees
+WHERE id = 61 OR 1
+";
+
+// $pdo->query($sql);

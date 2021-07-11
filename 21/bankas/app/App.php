@@ -15,7 +15,7 @@ class App {
       
 
         extract($data);
-        require \DIR.'views/'.$file.'.php';
+        require DIR.'views/'.$file.'.php';
     }
 
     public static function redirect($path = '') 
