@@ -3,6 +3,19 @@ namespace Bank;
 
 class BankController {
 
+    //private static $dbType = 'json';
+    private static $dbType = 'maria';
+
+    public static function getData()
+    {
+        if(self::$dbType == 'jason') {
+            return Json::getJason();
+        }
+        if(self::$dbType == 'maria') {
+            return Maria::getMaria();
+        }
+    }
+
 
     public function bankTest($whatToSay)
     {
@@ -11,10 +24,9 @@ class BankController {
     }
 
     public function index()
-
     {
-       
-        return App::view('index', ['accounts' => Json::getJson()->showAll()]);
+        $accounts = self::getData()->showAll();
+        return App::view('index', ['accounts' => self::getData()->showAll()]);
     }
 
     public function add($id)
@@ -25,9 +37,9 @@ class BankController {
     public function doAdd($id)
     {
         $id = $id;
-        $account = Json::getJson()->show($id);  //pasiima sena account is jsono
+        $account = self::getData()->show($id);  //pasiima sena account is jsono
         $account['amount'] += (int) $_POST['amount'];   //kai turi konkr. sask, issaugom - update
-        Json::getJson()->update($id, $account);
+        self::getData()->update($id, $account);
         App::redirect();    //i pradini psl
     }
 
@@ -39,15 +51,15 @@ class BankController {
     public function doRemove($id)
     {
         $id = $id;
-        $account = Json::getJson()->show($id);
+        $account = self::getData()->show($id);
         $account['amount'] -= (int) $_POST['amount'];
-        Json::getJson()->update($id, $account);
+        self::getData()->update($id, $account);
         App::redirect();
     }
 
     public function delete($id)
     {
-        Json::getJson()->delete($id);
+        self::getData()->delete($id);
         App::redirect();
     }
 
@@ -60,7 +72,7 @@ class BankController {
     public function save()
     {
         $account = ['id' => $_POST['id'], 'name' => $_POST['name'], 'surname' => $_POST['surname'], 'personID' => $_POST['personID'], 'amount' => 0];
-        Json::getJson()->create($account);
+        self::getData()->create($account);
         App::redirect();
     }
 

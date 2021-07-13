@@ -7,7 +7,7 @@ class Json implements DataBase {
     private $data;
     private static $obj;
     
-    public static function getJson()
+    public static function getJason()
     {
         return self::$obj ?? self::$obj = new self;
     }
