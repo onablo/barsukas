@@ -2,19 +2,19 @@
 
 
 <ul>
-    <?php foreach($accounts as $account) : ?>
+    <?php foreach($accaunts as $accauntData) : ?>        
         
-        <li>Sąskaitos Nr: <?=$account['id'] ?></li>
-        <li>Kliento vardas: <?=$account['name'] ?></li>         
-        <li>Kliento pavardė: <?=$account['surname'] ?></li>
-        <li>Kliento asmens kodas: <?=$account['personID'] ?></li>
-        <li>Lėšų likutis : <?= $account['amount']?></li>     
+        <li>Kliento vardas: <?=$accauntData['name'] ?></li>         
+        <li>Kliento pavardė: <?=$accauntData['surname'] ?></li>
+        <li>Kliento asmens kodas: <?=$accauntData['personID'] ?></li>
+        <li>Sąskaitos Nr: <?=$accauntData['id'] ?></li>
+        <li>Lėšų likutis : <?= $accauntData['amount']?></li>     
 
-        [<a style="margin: 10px; color: blue;" href="<?= URL ?>add/<?= $account['id'] ?>">Pridėti lėšų</a>]
+        [<a style="margin: 10px; color: blue;" href="<?= URL ?>add/<?= $accauntData['id'] ?>">Pridėti lėšų</a>]
 
-        [<a style="margin: 10px; color: red;" href="<?= URL ?>rem/<?= $account['id'] ?>">Nuskaičiuoti</a>]
+        [<a style="margin: 10px; color: red;" href="<?= URL ?>rem/<?= $accauntData['id'] ?>">Nuskaičiuoti</a>]
 
-        <form action="<?= URL ?>delete/<?=$account['id'] ?>" method="post">
+        <form action="<?= URL ?>delete/<?=$accauntData['id'] ?>" method="post">
             <button style="padding: 5px, 0; margin: 10px; background-color: red; border-radius: 7px;" type="submit">Uždaryti sąskaitą</button><br><br>
         </form>
     <?php endforeach ?>

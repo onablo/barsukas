@@ -1,0 +1,18 @@
+{
+    "name": "ana/18",
+    "description": "Objective Bank",
+    "authors": [
+        {
+            "name": "Ana onablo",
+            "email": "79449819+onablo@users.noreply.github.com"
+        }
+    ],        
+    "autoload": {           
+        "psr-4": {
+            "Bank\\": "app",
+            "App\\DB\\": "app"
+        }
+    },        
+    "require": {
+    }
+}

@@ -25,7 +25,6 @@ class BankController {
 
     public function index()
     {
-        $accounts = self::getData()->showAll();
         return App::view('index', ['accounts' => self::getData()->showAll()]);
     }
 
@@ -66,17 +65,20 @@ class BankController {
 
     public function create()
     {
-        return App::view('create_account');
+       $accountNr ='LT98730001007276'. rand(1000, 9999);
+       return App::view('create_account', ['accountNr' => $accountNr]);
+   
     }
+
 
     public function save()
     {
-        $account = ['id' => $_POST['id'], 'name' => $_POST['name'], 'surname' => $_POST['surname'], 'personID' => $_POST['personID'], 'amount' => 0];
+        $account = ['name' => $_POST['name'], 'surname' => $_POST['surname'], 'personID' => $_POST['personID'], 'accountNr' => $_POST['accountNr'], 'amount' => 0];
         self::getData()->create($account);
         App::redirect();
     }
 
 }
-
-
+ 
+//'id' => $_POST['id'],
 

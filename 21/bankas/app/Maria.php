@@ -38,17 +38,20 @@ class Maria implements DataBase {
     public function create(array $accountData) : void
     {
         $sql =
-        "INSERT INTO saskaitos (`count`)
-        VALUES (0)";
+        "INSERT INTO saskaitos (`name`, `surname`, `personID`, `accountNr`, `amount`)
+        VALUES
+            ('".$accountData['name']."', '".$accountData['surname']."', 
+            '".$accountData['personID']."', '".$accountData['accountNr']."', '".$accountData['amount']."')";
         $this->pdo->query($sql);
 
-    }
+    }   
+// `id`, // '".$accountData['id']."',
 
     public function update( $accountId, array $accountData) : void
     {
         $sql =
         "UPDATE saskaitos
-        SET `count` = ".$accountData['amount']."
+        SET `amount` = ".$accountData['amount']."
         WHERE id = $accountId";
 
 
@@ -63,10 +66,11 @@ class Maria implements DataBase {
         $this->pdo->query($sql);
     }
 
+//, `count` as amount
     public function show(int $accountId) : array
     {
         $sql = 
-        "SELECT id, `count` as amount
+        "SELECT id
         FROM saskaitos
         WHERE id = $accountId
         ";
@@ -75,12 +79,12 @@ class Maria implements DataBase {
         return $row;
 
     }
-
+//, `count` as amount
     public function showAll() : array {
         $sql = 
-        "SELECT id, `count` as amount
+        "SELECT id  
         FROM saskaitos
-        ORDER BY `count` DESC
+        ORDER BY `amount` DESC
         ";
         $all = [];
         $stmt = $this->pdo->query($sql);
